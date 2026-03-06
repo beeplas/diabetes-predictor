@@ -77,7 +77,7 @@ if st.button("Predict Diabetes Risk"):
     # 5. Get Prediction
     prob = pipeline.predict_proba(input_data)[:, 1][0]
     
-    # We use your custom threshold (0.42) to maintain high Recall
+    # custom threshold (0.42) to maintain high Recall
     threshold = 0.42
     prediction = 1 if prob >= threshold else 0
 
@@ -91,3 +91,4 @@ if st.button("Predict Diabetes Risk"):
         st.success(f"### Result: Low Risk of Diabetes")
         st.write(f"Confidence Level: **{(1-prob)*100:.2f}%** (Confidence of Healthy)")
         st.info("ℹ️ Recommendation: Continue regular health check-ups.")
+
